@@ -3,8 +3,7 @@ Computer Graphic - Laboratory Work 01
 ТЕРМИНЫ И ОБОЗНАЧЕНИЯ
 -----------------------------------
 
-1)
-```html 
+1)```html 
 id='less1' width='150' height='150'>
     ...
 ```
