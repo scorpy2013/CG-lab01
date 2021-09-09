@@ -1,0 +1,86 @@
+<! Brezenhelm algorithm
+y-y0 = [(y1-y0)/(x1-x0)] * (x-x0)
+S = (y1-y0) / (x1-x0)
+
+{| E = E + 2 * (y1-y0)
+{| if E < (x1-x0) then y=y
+{| if E !< (x1-x0) then y=y+1 , E = E - 2 * (x1-x0)
+>
+
+<HTML>
+<BODY>
+
+<canvas id='canvas' width='800px' height='800px' style='border:5px solid #ff9e00'>
+</canvas>
+
+<script>
+
+    function sign(begin, end) {
+        return (end - begin) / Math.abs(end - begin);
+    }
+
+    function is_need_replacing(x_begin, y_begin, x_end, y_end) {
+        var angle = Math.asin(Math.abs(y_begin - y_end) / Math.sqrt((x_begin - x_end) * (x_begin - x_end) + (y_begin - y_end) * (y_begin - y_end))) * 180 / Math.PI;
+        if (angle > 45 && angle <= 90)
+            return true;
+    }
+
+    function line(x_begin, y_begin, x_end, y_end, colour) {
+        console.log(x_end, y_end);
+        ctx.fillStyle = colour;
+        var E = 0;
+        var x = x_begin;
+        var y = y_begin;
+        if (is_need_replacing(x_begin, y_begin, x_end, y_end)) {
+            while (y !== y_end) {
+                E = E + 2 * (x_end - x_begin);
+                if (Math.abs(E) < Math.abs((y_end - y_begin))) {
+                    ctx.fillRect(x, y, 1, 1);
+                } else {
+                    x = x + sign(x_begin, x_end);
+                    E = E - 2 * (y_end - y_begin) * sign(x_begin, x_end) * sign(x_begin, y_end);
+                    ctx.fillRect(x, y, 1, 1);
+                }
+                y = y + sign(y_begin, y_end);
+            }
+            return;
+        }
+        while (x !== x_end) {
+            E = E + 2 * (y_end - y_begin);
+            if (Math.abs(E) < Math.abs((x_end - x_begin))) {
+                ctx.fillRect(x, y, 1, 1);
+            } else {
+                y = y + sign(y_begin, y_end);
+                E = E - 2 * (x_end - x_begin) * sign(y_begin, y_end) * sign(x_begin, x_end);
+                ctx.fillRect(x, y, 1, 1);
+            }
+            x = x + sign(x_begin, x_end);
+        }
+    }
+
+    function clock(x_begin, y_begin, radius) {
+        var angle = Math.floor(Date.now() % 60000 / 1000) * 6 + 90;
+        var y_end = Math.floor(Math.abs(radius * Math.sin(angle * Math.PI / 180) - y_begin));
+        var x_end = Math.floor(Math.abs(radius * Math.cos(angle * Math.PI / 180) - x_begin));
+        line(x_begin, y_begin, x_end, y_end, '#ffffff');
+        setTimeout(function () {
+            line(x_begin, y_begin, x_end, y_end, '#000000')
+        }, 1000)
+    }
+
+</script>
+
+<script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var radius = 400, x_begin = 400, y_begin = 400, x_end = 0, y_end = 0;
+    ctx.arc(x_begin, y_begin, radius, 0, 2 * Math.PI, false)
+    ctx.fill();
+    setInterval(function () {
+        clock(x_begin, y_begin, radius)
+    }, 1000);
+
+</script>
+<!line(x0, y0, x1, y1, '#000000');>
+</BODY>
+</HTML>
