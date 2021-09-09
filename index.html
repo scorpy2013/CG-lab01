@@ -73,7 +73,7 @@ S = (y1-y0) / (x1-x0)
 <script>
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
-    var radius = 400, x_begin = 400, y_begin = 400, x_end = 0, y_end = 0;
+    var radius = 400, x_begin = 400, y_begin = 400;
     ctx.arc(x_begin, y_begin, radius, 0, 2 * Math.PI, false)
     ctx.fill();
     setInterval(function () {
