@@ -73,3 +73,34 @@
 </body>
 </html>
 <p>_______________________________________</p>
+<html>
+<head/>
+<body>
+<p>A circle (radius = 60).</p>
+<canvas id="drawRound" width="600" height="300">
+
+drawRound {
+width: 600px;
+height: 300px;
+margin: 40px;
+background-image: url(grid.png);
+}
+
+// Получение элемента canvas, контекста и свойства Math.PI
+let canvas = document.getElementById('drawRound');
+let ctx = canvas.getContext('2d');
+let pi = Math.PI;
+
+ctx.beginPath();// начало нового пути
+ctx.lineWidth = 7; // толщина обводки
+ctx.strokeStyle = "green"; // цвет обводки
+// Координаты центра круга, радиус, начальный угол, конечный угол, направление по часовой стрелке
+ctx.arc(100, 100, 75, 0, pi/2, false );
+ctx.stroke();
+
+</script>
+
+</canvas>
+</body>
+</html>
+<p>_______________________________________</p>
