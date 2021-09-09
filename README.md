@@ -3,7 +3,9 @@ Computer Graphic - Laboratory Work 01
 ТЕРМИНЫ И ОБОЗНАЧЕНИЯ
 -----------------------------------
 
-1) ```html <canvas id='less1' width='150' height='150'> ```  
+1) ```html 
+<canvas id='less1' width='150' height='150'> 
+```  
     ...  
   ``` </canvas> ```
    
