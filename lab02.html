@@ -1,0 +1,31 @@
+
+<html>
+<head>
+<body>
+
+<canvas id="graph" width="500" height="500"></canvas>
+<script>
+
+    var ctx = document.querySelector("canvas").getContext("2d");
+    ctx.beginPath();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "magenta";
+    ctx.fillStyle= "darkmagenta";
+    ctx.arc(200, 200, 100, 0, 7);
+    ctx.arc(200, 200, 90, 0, 7);
+    ctx.arc(200, 200, 80, 0, 7);
+    ctx.arc(200, 200, 70, 0, 7);
+    ctx.arc(200, 200, 60, 0, 7);
+    ctx.arc(200, 200, 50, 0, 7);
+    ctx.arc(200, 200, 40, 0, 7);
+    ctx.arc(200, 200, 30, 0, 7);
+    ctx.arc(200, 200, 20, 0, 7);
+    ctx.arc(200, 200, 10, 0, 7);
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+</canvas>
+</body>
+</html>
