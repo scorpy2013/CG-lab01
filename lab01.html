@@ -8,28 +8,28 @@
 <p>Straight lines with different angles of inclination.</p>
 
 <canvas id='less1' width='150' height='150'>
-<script>
-    var canvas=document.getElementById('less1');
-    var ctx=canvas.getContext('2d');
-    for(j=0;j<=10;j++)
-    {
-        var ang=j*10;
-        var delta=0;
-        var y=0;
-        for(i=0; i<100;i++)
+    <script>
+        var canvas=document.getElementById('less1');
+        var ctx=canvas.getContext('2d');
+        for(j=0;j<=10;j++)
         {
-            ctx.fillRect(10+i,10+y,1,1);
-            ctx.fillRect(10+y,10+i,1,1);
-            delta +=ang;
-            if (delta>=50)
+            var ang=j*10;
+            var delta=0;
+            var y=0;
+            for(i=0; i<100;i++)
             {
-                delta-=100;
-                y++;
+                ctx.fillRect(10+i,10+y,1,1);
+                ctx.fillRect(10+y,10+i,1,1);
+                delta +=ang;
+                if (delta>=50)
+                {
+                    delta-=100;
+                    y++;
+                }
             }
         }
-    }
 
-</script>
+    </script>
 </canvas>
 </body>
 </html>
@@ -73,18 +73,13 @@
 </body>
 </html>
 <p>_______________________________________</p>
+
 <html>
-<head/>
+<head>
 <body>
 <p>A circle (radius = 60).</p>
 <canvas id="drawRound" width="600" height="300">
-
-drawRound {
-width: 600px;
-height: 300px;
-margin: 40px;
-background-image: url(grid.png);
-}
+<script>
 
 // Получение элемента canvas, контекста и свойства Math.PI
 let canvas = document.getElementById('drawRound');
