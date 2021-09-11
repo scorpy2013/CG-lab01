@@ -52,6 +52,22 @@ Computer Graphic - Laboratory Work 01
   
   Создание самой фигуры.  
 
+11)```ctx.arc(200, 200, 10, 0, 7);```  
+  
+  Метод рисует окружность со следующими параметрами: координаты центра круга, радиус, начальный угол, конечный угол. 
+  
+  ctx.fill();
+  
+  "Заливаем" фигуру.
+  
+12)```ctx.strokeStyle = "magenta";
+  
+  Выбираем цвет контура.
+  
+  ctx.fillStyle= "darkmagenta";
+  
+  Выбираем цвет заливки.
+
 ![Результаты работы программы](https://github.com/scorpy2013/CG-lab01/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202021-09-11%2015-36-33.png)
 ![](https://github.com/scorpy2013/CG-lab01/blob/master/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202021-09-11%2023-39-02.png)
   
