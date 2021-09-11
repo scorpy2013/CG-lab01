@@ -42,6 +42,7 @@ Computer Graphic - Laboratory Work 01
 9)```ctx.strokeStyle = "green";```   
   
   Задаем цвет обводки.  
+  
 10)```ctx.stroke();```  
   
   Создание самой фигуры.  
