@@ -60,11 +60,7 @@ Computer Graphic - Laboratory Work 01
   
   "Заливаем" фигуру.  
   
-13)```ctx.strokeStyle = "magenta";```  
-  
-  Выбираем цвет контура.  
-  
-14)```ctx.fillStyle= "darkmagenta";```  
+15)```ctx.fillStyle= "darkmagenta";```  
   
   Выбираем цвет заливки.  
 
